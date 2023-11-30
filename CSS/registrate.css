@@ -46,13 +46,15 @@ body{
 
 .contenedor .contenido{
     grid-area: contenido;
-} */
+    
+} 
 
 
 .formulario {
 	display: grid;
 	grid-template-columns: 1fr ;
 	gap: 20px;
+    
 
  }
 
@@ -194,77 +196,30 @@ body{
 
 }
 
-/* ----- -----  Mediaqueries ----- ----- */
-@media screen and (max-width: 800px){
-	.formulario {
-		grid-template-columns: 1fr;
-	}
 
-.formulario__grupo-terminos,
-.formulario__mensaje,
-.formulario__grupo-btn-enviar{
-	grid-column: 1;
+.modo-oscuro {
+    background-color: #333;
+    
+} 
+
+/* .modo-oscuro p, a, h2, h4{
+    color:black;
+} */
+
+.modo-oscuro .header {
+    background: rgb(199, 199, 199);
+    color: #12203e;
+    grid-area: header;
+}
+/* 
+.modo-oscuro .header h1 {
+    color: #12203e
 }
 
-.formulario{
-	width: 100%;
+.modo-oscuro .header a {
+    color: #12203e
+} */
 
-}
-
-.sidebar{
-	width: 100%;
-}
-}
-
-@media screen  and (max-width:768px) {
-    .contenedor{
-
-        background-color: rgb(10, 114, 79);
-        grid-template-areas:
-        "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "carrousel carrousel carrousel"
-        "footer footer footer";
-    }
-
-	
-.formulario{
-	width: 100%;
-
-}
-
-.sidebar{
-	width: 100%;
-}
-}
-
-
-@media screen and (max-width: 600px){
-
-    .contenedor{
-
-        background-color: yellowgreen;
-
-        grid-template-areas:
-        "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "carrousel carrousel carrousel"
-        "footer footer footer";
-
-    }
-	
-.formulario{
-	width: 100%;
-
-}
-
-.sidebar{
-	width: 100%;
-}
-}
-  
 
 .contenedor .sidebar {
     background: #5889f3;
@@ -292,9 +247,9 @@ body{
     color: #fff;
 }
 
-.modo-oscuro p, a, h2, h4{
+/* .modo-oscuro p, a, h2, h4{
     color:black;
-}
+} */
 
 .modo-oscuro .header {
     background: rgb(199, 199, 199);
@@ -302,29 +257,90 @@ body{
     grid-area: header;
 }
 
-.modo-oscuro .header h1 {
+/* .modo-oscuro .header h1 {
     color: #12203e
 }
 
 .modo-oscuro .header a {
     color: #12203e
-}
+} */
 
 .links {
-    /* Estilos por defecto */
+    
 	text-decoration: none;
     color: black;
     background-color: transparent;
-    transition: color 1s, background-color 1s; /* Agregamos una transición suave */
+    transition: color 1s, background-color 1s; 
 }
 
 .links:hover {
-    /* Estilos al pasar el mouse sobre el elemento */
+    
     color: rgb(25, 175, 230);
     background-color: white;
 }
 
 .contenedor .footer p {
     color: white;
+}
+
+/* ----- -----  Mediaqueries ----- ----- */
+
+@media screen and (max-width: 1024px) {
+    .contenedor {
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-areas: "header header"
+                           "contenido sidebar"
+                           "widget-1 widget-1"
+                           "footer footer";
+    }
+    .formulario {
+		grid-template-columns: 1fr;
+	}
+
+    .formulario__grupo-terminos,
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar{
+        grid-column: 1;
+    }
+
+    .formulario{
+        width: 100%;
+
+    }
+
+    .sidebar{
+        width: 100%;
+}
+}
+
+
+@media screen  and (max-width:768px){
+    .contenedor {
+          grid-template-columns: 1fr;
+          grid-template-areas: "header"
+                               "contenido"
+                               "sidebar"
+                               "widget-1"
+                               "footer";
+}
+ .formulario {
+		grid-template-columns: 1fr;
+	}
+
+    .formulario__grupo-terminos,
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar{
+        grid-column: 1;
+    }
+
+    .formulario{
+        width: 100%;
+
+    }
+
+    .sidebar{
+        width: 100%;
+}
+
 }
 

@@ -79,16 +79,50 @@ p {
  }
 
 
+.contenedor .sectionpuntos{
+    background-color:#778899 ;
+    padding: 15px;
+    border: 2px solid blue;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    max-height: 70%;
+    flex-wrap: wrap;
 
+}
 .contenedor .caja {
-     background-color: rgb(106, 179, 252);
-     padding: 40 px;
-     text-align: center;
+     background-color: #778899;
      border: 1px dashed rgb(100, 8, 206);
+     align-items: center;
+     flex-grow: 1;
+     text-align: center;
+     font-size: small;
+     margin-top: 0.5rem;
+     margin-bottom: 0.5rem;
+     border-radius: 16px;
+     padding: 0.5rem;
+     width: 25%;
+
+}
+.contenedor .caja h3, p{
+    color: black;
+    
+    
 }
 
-.contenedor .widget-1
-/*.contenedor .widget-2*/ {
+
+.foto{
+    border-radius: 5%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.foto:hover {
+    transform: scale(1.2);
+ }
+
+
+.contenedor .widget-1 {
     background: #106675;
     color: white;
     height: 30vw;
@@ -107,6 +141,7 @@ p {
 }
 
 .contenedor .mapa{
+    align-items: center;
     width: 100%;
 }
 
@@ -118,16 +153,6 @@ p {
 
 .contenedor .footer p {
     color: white;
-}
-
-@media screen  and (max-width:768px) {
-    .contenedor{
-        grid-template-areas: "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "widget-1 widget-1 widget-2"
-        "footer footer footer";
-    }
 }
 
 .modo-oscuro {
@@ -154,46 +179,59 @@ p {
 }
 
 .links {
-    /* Estilos por defecto */
+   
     text-decoration: none;
     color: black;
     background-color: transparent;
-    transition: color 1s, background-color 1s; /* Agregamos una transición suave */
+    transition: color 1s, background-color 1s; 
 }
 
 .links:hover {
-    /* Estilos al pasar el mouse sobre el elemento */
+    
     color: rgb(25, 175, 230);
     background-color: white;
 }
 
-@media screen  and (max-width:768px) {
-    .contenedor{
+@media screen and (max-width: 1024px) {
+    .contenedor {
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-areas: "header header"
+                           "contenido sidebar"
+                           "widget-1 widget-1"
+                           "footer footer";
+    }
 
-        background-color: rgb(10, 114, 79);
-        grid-template-areas:
-        "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "carrousel carrousel carrousel"
-        "footer footer footer";
+    .mapa{
+        width: 100%;
+    }
+    .contenedor .caja{
+        display: block;
+        width: 100%;
+    }
+    .contenedor .widget-1 h3{
+        font-size: medium;
+    }
+  }
+
+
+@media screen  and (max-width:768px){
+    .contenedor {
+          grid-template-columns: 1fr;
+          grid-template-areas: "header"
+                               "contenido"
+                               "sidebar"
+                               "widget-1"
+                               "footer";
+} 
+    .mapa{
+        width: 100%;
+    }
+
+    .contenedor .caja{
+        display: block;
+        width: 100%;
+    }
+    .contenedor .widget-1 h3{
+        font-size: small;
     }
 }
-
-
-@media screen and (max-width: 600px){
-
-    .contenedor{
-
-        background-color: yellowgreen;
-
-        grid-template-areas:
-        "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "carrousel carrousel carrousel"
-        "footer footer footer";
-
-    }
-}
-  

@@ -29,7 +29,7 @@ p {
     grid-template-rows: repeat(3,auto);
 
     grid-template-areas: "header header header "
-                         "contenido_recetas conntenido_recetas sidebar "
+                         "contenedor_recetas conntenedor_recetas sidebar "
                          "footer footer footer "
 }
 
@@ -40,7 +40,7 @@ p {
 
 .contenedor >div,
 .contenedor .header,
-.contenedor .contenido_recetas,
+.contenedor .contenedor_recetas,
 .contenedor .sidebar,
 .contenedor .footer {
     background: white;
@@ -63,43 +63,30 @@ p {
 }
 
 
-
-.contenedor .contenido_recetas {
-    background-color: #5889f3;
-    grid-area: contenido_recetas;
+.contenedor .contenedor_recetas {
+    background-color: white;
+    grid-area: contenedor_recetas;
 }
 
 .contenedor .contenido_recetas h3{
     color: #333;
 }
 
-.contenedor .sidebar {
-    background: #5889f3;
-    text-align: center;
-    display: list-item;
-    align-items: center;
-    justify-content: center;
-    min-height: 100px;
-    grid-area: sidebar;
-    gap: 20px
- }
 
-
-
-.contenedor .caja {
-     background-color: lightgreen;
-     padding: 10 px;
-     text-align: center;
-     border: 1px dashed black;
+.texto_intro{
+    color: black;
 }
 
+
+
 .contenedor .sidebar {
     background: #5889f3;
+    width: 20rem;
     text-align: center;
     display: list-item;
     align-items: center;
     justify-content: center;
-    min-height: 100px;
+    min-height: 90px;
     grid-area: sidebar;
     gap: 20px
  }
@@ -117,15 +104,7 @@ p {
     
 }
 
-/* @media screen  and (max-width:768px) {
-    .contenedor{
-        grid-template-areas: "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "widget-1 widget-1 widget-2"
-        "footer footer footer";
-    }
-} */ 
+
 
 .modo-oscuro {
     background-color: #333;
@@ -151,15 +130,15 @@ p {
 }
 
 .links {
-    /* Estilos por defecto */
+    
     text-decoration: none;
     color: black;
     background-color: transparent;
-    transition: color 1s, background-color 1s; /* Agregamos una transición suave */
+    transition: color 1s, background-color 1s; 
 }
 
 .links:hover {
-    /* Estilos al pasar el mouse sobre el elemento */
+    
     color: rgb(25, 175, 230);
     background-color: white;
 }
@@ -192,37 +171,38 @@ p {
 }
 
 .imagen_receta{
+
     border-radius: 16px;
     justify-content: center;
 }
 
-@media screen  and (max-width:768px) {
-    .contenedor{
 
-        background-color: rgb(10, 114, 79);
-        grid-template-areas:
-        "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "carrousel carrousel carrousel"
-        "footer footer footer";
+@media screen and (max-width: 1024px) {
+    .contenedor {
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-areas: "header header"
+                           "contenedor_recetas sidebar"
+                            "footer footer";
+                        
     }
+
+    .sidebar{
+        width: 100%;
+    }
+  }
+
+
+@media screen  and (max-width:768px){
+    .contenedor {
+          grid-template-columns: 1fr;
+          grid-template-areas: "header"
+                               "contenedor_recetas"
+                               "sidebar"
+                                "footer";
+}
+    .sidebar{
+        width: 100%;
+    }
+
 }
 
-
-@media screen and (max-width: 600px){
-
-    .contenedor{
-
-        background-color: yellowgreen;
-
-        grid-template-areas:
-        "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "carrousel carrousel carrousel"
-        "footer footer footer";
-
-    }
-}
-  

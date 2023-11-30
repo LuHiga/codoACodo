@@ -87,15 +87,15 @@ body{
 
 
 
-.contenedor .caja {
+/* .contenedor .caja {
      background-color: lightgreen;
      padding: 10 px;
      text-align: center;
      border: 1px dashed black;
-}
+} */
 
 .contenedor .widget-1 {
-    width: 95%;
+    width: 96%;
     max-width: 100em;   
     background-color: lightblue;
     grid-area: widget-1;
@@ -162,7 +162,9 @@ body{
     color: white;
 }
 
-
+.contacto .form {
+    color: #333;
+}
     
 
 
@@ -203,36 +205,31 @@ body{
     background-color: white;
 }
 
-@media screen  and (max-width:768px) {
-    .contenedor{
-
-        background-color: rgb(10, 114, 79);
-        grid-template-areas:
-        "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "carrousel carrousel carrousel"
-        "footer footer footer";
+@media screen and (max-width: 1024px) {
+    .contenedor {
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-areas: "header header"
+                           "contenido sidebar"
+                           "widget-1 widget-1"
+                           "footer footer";
     }
+.form{
+    width: 100%;
 }
 
+  }
 
-@media screen and (max-width: 600px){
 
-    .contenedor{
-
-        background-color: yellowgreen;
-
-        grid-template-areas:
-        "header header header"
-        "contenido contenido contenido"
-        "sidebar sidebar sidebar"
-        "carrousel carrousel carrousel"
-        "footer footer footer";
-
-    }
+@media screen  and (max-width:768px){
+    .contenedor {
+          grid-template-columns: 1fr;
+          grid-template-areas: "header"
+                               "contenido"
+                               "sidebar"
+                               "widget-1"
+                               "footer";
 }
-   
+}
 
 
 
